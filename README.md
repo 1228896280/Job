@@ -46,7 +46,7 @@ DB_CONNECT		  #修改mysql连接信息
 
 # 配置 SPLASH_URL
 本爬虫使用splash渲染js脚本，安装参考
-##### [splash安装](http://www.jianshu.com/p/4052926bc12c)
+    [splash安装](http://www.jianshu.com/p/4052926bc12c)
 ....
 
 ```
@@ -60,44 +60,6 @@ DB_CONNECT		  #修改mysql连接信息
 
 ```
 
-数据库
-=================================
-
-1.alljob<br />
-```sql
-DROP TABLE IF EXISTS `alljob`;
-CREATE TABLE `alljob` (
-  `英文缩写` text,
-  `中文名称` text,
-  `所属洲` text,
-  `所在地` text,
-  `分类` text,
-  `主页url` text,
-  `招聘网址` text,
-  `岗位url` text NOT NULL,
-  `岗位名称` text NOT NULL,
-  `工作地点` text,
-  `职级` text,
-  `发布日期` text,
-  `截止日期` text,
-  `职位介绍` text,
-  `职能` text,
-  `技能` text,
-  `组织机构` text,
-  `包工方式` text,
-  `语言` text,
-  `初始合同时间` text,
-  `预计工作时间` text,
-  `联系人` text,
-  `是否全职` text,
-  `待遇` text,
-  `教育背景` text,
-  `附加的` text,
-  `工作经历` text,
-  `参考` text,
-  PRIMARY KEY (`岗位名称`(100),`岗位url`(100))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-```
 
 ### 问题反馈
 

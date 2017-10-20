@@ -12,10 +12,8 @@ NEWSPIDER_MODULE = 'Job.spiders.jobSpider'
 DOWNLOAD_DELAY = 0.1
 DOWNLOAD_TIMEOUT = 100
 
-
-DB_SERVER = 'MySQLdb'
-DB_CONNECT = {
-    'db':'job',
+DB = 'job'
+MYSQLDB_CONNECT = {
     'user': 'root',
     'port': 3306,
     'passwd': '1234',
@@ -30,7 +28,7 @@ LOGPATH = 'c:\\log'
 
 DOWNLOADER_MIDDLEWARES = {
     # 'Job.middlewares.phantomjsMiddleware.phantomjsMiddleware': 543,
-    'Job.middlewares.proxyMiddleware.proxyMiddleware': 544,
+    # 'Job.middlewares.proxyMiddleware.proxyMiddleware': 544,
     'scrapy_splash.SplashCookiesMiddleware': 723,
     'scrapy_splash.SplashMiddleware': 725,
     'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
