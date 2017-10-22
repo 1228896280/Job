@@ -30,7 +30,7 @@ class FileUtil(object):
         获取logging配置文件的路径
         """
 		rootFolder = "Job"
-		logPath = self.cur_file_dir().split(rootFolder, 1)[0] + rootFolder + "/Job/utils/logging.ini"
+		logPath = self.cur_file_dir().split(rootFolder, 1)[0] + rootFolder + "/Job/logging.ini"
 		print logPath
 		return logPath
 

@@ -8,14 +8,15 @@ import re
 from scrapy.http import Request
 from scrapy_splash import SplashRequest
 import logging.config
+from ..baseSpider import baseSpider
 from ...utils.Util import StrUtil
-from ...allitems.jobitems import AllJobs
 logger = logging.getLogger('ahu')
-class UNDPjobSpider(scrapy.Spider):
+class UNDPjobSpider(baseSpider):
     name = "UNDPjob"
     start_urls = ["https://jobs.undp.org/cj_view_jobs.cfm"]
 
-    def __init__(self):
+    def __init__(self,*a, **kw):
+        super(UNDPjobSpider, self).__init__(*a, **kw)
         self.preurl = "https://jobs.undp.org/"
 
     def parse(self, response):
@@ -46,9 +47,6 @@ class UNDPjobSpider(scrapy.Spider):
                 # 提取岗位申请时间
                 applytime = everlink.xpath('td[4]/text()').extract()
                 APPLYTIME = applytime[1] if len(applytime) else ""
-                # 提取岗位联系人
-                linkman = everlink.xpath('td[5]/text()').extract()
-                LINKMAN = linkman[0] if len(linkman) else ""
                 if LINK.endswith('id=2'):
 
                     logger.debug("开始爬取链接%s"%LINK)
@@ -57,8 +55,7 @@ class UNDPjobSpider(scrapy.Spider):
                                     callback=self._crawliframe,
                                     meta={"describe":DESERIBE,
                                             "suoshu":SUOSHU,
-                                            "applytime":APPLYTIME,
-                                            "linkman":LINKMAN},
+                                            "applytime":APPLYTIME,},
                                   args={'wait': 2})
 
                 else:
@@ -68,8 +65,7 @@ class UNDPjobSpider(scrapy.Spider):
                                     meta={"describe":DESERIBE,
                                                 "suoshu":SUOSHU,
                                                 "work":WORK,
-                                                "applytime":APPLYTIME,
-                                                "linkman":LINKMAN}
+                                                "applytime":APPLYTIME,}
                                           )
 
     def _UNDPprase(self, response):
@@ -78,16 +74,22 @@ class UNDPjobSpider(scrapy.Spider):
         '''
         logger.debug('crawl noid!')
         job = scrapy.Selector(response)
-        item = self._setitem()
+        item = self.initItem()
         item["joburl"] = response.url
         item["PostLevel"] = response.meta["work"]
         item["work"] = response.meta["describe"]
         item["belong"] = response.meta["suoshu"]
         item["issuedate"] = response.meta["applytime"]
-        item["linkman"] = response.meta["linkman"]
+        item['incontinent'] = '北美洲'
+        item['alljoburl'] = 'https://jobs.undp.org/cj_view_jobs.cfm'
+        item['type'] = '科学研究'
+        item['englishname'] = 'UNDP'
+        item['chinesename'] = '联合国开发计划署'
+        item['url'] = 'http://www.undp.org/'
+        item['incountry'] = '美国'
         self._crawlnoid(job,item)
-        # self.debugPrint(item)
-        yield item
+        self.debugItem(item)
+        self.insert(item,spiderName=self.name)
 
     def _crawlnoid(self,job,item):
         '''
@@ -129,8 +131,8 @@ class UNDPjobSpider(scrapy.Spider):
                 elif "Skills" in name[0]:
                     data = StrUtil.delMoreSpace(StrUtil.delWhiteSpace(skilldatas[i + 1].xpath('td[@class="text"]').xpath('string(.)').extract()[0]))
                     try:
-                        item['education'] = re.sub(r'Exp[e,é]rience:','',re.search(r'Education(.*?)Exp[e,é]rience:',data,re.I).group(0)).encode('utf8')
-                        item['experience'] = re.search(r'Exp[e,é]rience(.*?)Langu:', data, re.I).group(0).strip('Langu').encode('utf8')
+                        item['education'] = re.sub(r'Exp[eé]rience:','',re.search(r'Education(.*?)Exp[e,é]rience:',data,re.I).group(0)).encode('utf8')
+                        item['experience'] = re.search(r'Exp[eé]rience(.*?)Langu', data, re.I).group(0).strip('Langu').encode('utf8')
                     except:
                         item['education'] = item['experience'] = data
 
@@ -157,12 +159,18 @@ class UNDPjobSpider(scrapy.Spider):
         解析iframe框架页面
         '''
 
-        item = self._setitem()
+        item = self.initItem()
         item['joburl'] = response.url
         item["description"] = response.meta["describe"]
         item["belong"] = response.meta["suoshu"]
         item["issuedate"] = response.meta["applytime"]
-        item["linkman"] = response.meta["linkman"]
+        item['incontinent'] = '北美洲'
+        item['alljoburl'] = 'https://jobs.undp.org/cj_view_jobs.cfm'
+        item['type'] = '科学研究'
+        item['englishname'] = 'UNDP'
+        item['chinesename'] = '联合国开发计划署'
+        item['url'] = 'http://www.undp.org/'
+        item['incountry'] = '美国'
         field = ['Agency', 'Title', 'Job ID', 'Practice Area - Job Family', 'Vacancy End Date', 'Time Left',
                          'Duty Station', 'Education & Work Experience', 'Languages', 'Grade', 'Vacancy Type',
                          'Posting Type',
@@ -214,60 +222,5 @@ class UNDPjobSpider(scrapy.Spider):
                     temp.append(td)
         except:
             logger.error('parser error!')
-        # self.debugPrint(item)
-        yield item
-        
-
-    def _setitem(self):
-        '''初始化页面全部字段'''
-        item = AllJobs()
-        item["work"] = ""
-        item["englishname"] = "UNDP"
-        item["chinesename"] = u"联合国开发计划署"
-        item["incontinent"] = u"北美洲"
-        item["incountry"] = u"美国"
-        item["type"] = u"科学研究"
-        item["url"] = "http://www.undp.org/"
-        item["alljoburl"] = "https://jobs.undp.org/cj_view_jobs.cfm"
-        item["joburl"] = ""
-        item["description"] = ""
-        item["belong"] = ""
-        item["issuedate"] = ""
-        item["linkman"] = ""
-        item["ApplicationDeadline"] = ''
-        item["Location"] = ''
-        item["PostLevel"] = ''
-        item['reference'] = ''
-        item['responsibilities'] = ''
-        item['skill'] = ''
-        item['TypeofContract'] = ''
-        item['language'] = ''
-        item['contracttime'] = ''
-        item['ExpectedDurationofAssignment'] = ''
-        item['full_time'] = ''
-        item['treatment'] = ''
-        item['education'] = ''
-        item['addition'] = ''
-        item['experience'] = ''
-        return item
-
-    def debugPrint(self,item):
-        '''调试输出已经爬取的字段'''
-        logger.debug("组织简写>>>%s" % item["englishname"])
-        logger.debug("组织名称>>>%s" % item["chinesename"])
-        logger.debug("组织类型>>>%s" % item["type"])
-        logger.debug("url>>>%s" % item["joburl"])
-        logger.debug("岗位>>>%s" % item["work"])
-        logger.debug("职级>>>%s" % item["PostLevel"])
-        logger.debug("部门>>>%s" % item["belong"])
-        logger.debug("工作位置>>>%s" % item["Location"])
-        logger.debug("发布时间>>>%s" % item["issuedate"])
-        logger.debug("截止时间>>>%s" % item["ApplicationDeadline"])
-        logger.debug("组织>>>%s" % item["chinesename"])
-        logger.debug("职责>>>%s" % item["responsibilities"])
-        logger.debug("描述>>>%s" % item["description"])
-        logger.debug("技能>>>%s" % item["skill"])
-        logger.debug("教育背景>>>%s" % item["education"])
-        logger.debug("工作经历>>>%s" % item["experience"])
-        logger.debug("语言>>>%s" % item["language"])
-        logger.debug("附加信息>>>%s" % item["addition"])
+        self.debugItem(item)
+        self.insert(item,spiderName=self.name)

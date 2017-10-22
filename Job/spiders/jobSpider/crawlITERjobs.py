@@ -8,15 +8,16 @@ try:
 except:
     import BeautifulSoup
 from selenium import webdriver
-from ...allitems.jobitems import AllJobs
+from ..baseSpider import baseSpider
 import time
 import logging.config
 logger = logging.getLogger('ahu')
-class ITERJobSpider(scrapy.Spider):
+class ITERJobSpider(baseSpider):
 
     name = 'ITERjob'
     start_urls = ["http://www.iter.org/jobs"]
-    def __init__(self):
+    def __init__(self,*a, **kw):
+        super(ITERJobSpider, self).__init__(*a, **kw)
         logger.debug("准备爬取ITER(国际热核聚变实验堆计划)岗位数据")
         self.driver = webdriver.PhantomJS()
         # self.driver = webdriver.Chrome()
@@ -46,7 +47,15 @@ class ITERJobSpider(scrapy.Spider):
             logger.debug("准备爬取%s"%link)
             self.driver.get(link)
             time.sleep(2)
-            item = self._inititem(link)
+            item = self.initItem()
+            item['joburl'] = link
+            item['incontinent'] = '欧洲'
+            item['alljoburl'] = 'http://www.iter.org/jobs'
+            item['type'] = '能源'
+            item['englishname'] = 'ITER'
+            item['chinesename'] = '国际热核聚变实验堆计划'
+            item['url'] = 'http://www.iter.org/proj/inafewlines#5'
+            item['incountry'] = '法国'
             itemDict = self.crawlJobDetailPage(self.driver.page_source)
 
             # todo 整理字段,倒入新定义的item
@@ -58,9 +67,8 @@ class ITERJobSpider(scrapy.Spider):
                     for _ in self.matchingDict.get(each):
                         if itemDict.has_key(_):
                             item[each] += itemDict[_]
-            # print item
-            yield item
-
+            # self.debugItem(item)
+            self.insert(item, spiderName=self.name)
 
     def crawlJobDetailPage(self,res):
         '''
@@ -82,39 +90,4 @@ class ITERJobSpider(scrapy.Spider):
                 item[key] = value
             except:
                 pass
-        return item
-
-    def _inititem(self,link):
-        '''
-        初始化全部字段
-        '''
-        item = AllJobs()
-        item["englishname"] = "ITER"
-        item["chinesename"] = "国际热核聚变实验堆计划"
-        item["incontinent"] = "欧洲"
-        item["incountry"] = "法国"
-        item["type"] = "能源"
-        item["url"] = "http://www.iter.org/proj/inafewlines#5"
-        item["alljoburl"] = "http://www.iter.org/jobs"
-        item['description'] = ''
-        item['joburl'] = link
-        item['work'] = ''
-        item['reference'] = ''
-        item['issuedate'] = ''
-        item['ApplicationDeadline'] = ''
-        item['responsibilities'] = ''
-        item['skill'] = ''
-        item['PostLevel'] = ''
-        item['belong'] = ''
-        item['TypeofContract'] = ''
-        item['language'] = ''
-        item['contracttime'] = ''
-        item['ExpectedDurationofAssignment'] = ''
-        item['linkman'] = ''
-        item['Location'] = ''
-        item['full_time'] = ''
-        item['treatment'] = ''
-        item['education'] = ''
-        item['addition'] = ''
-        item['experience'] = ''
         return item

@@ -6,18 +6,19 @@ sys.setdefaultencoding('utf-8')
 import scrapy
 from scrapy.http import Request
 from ...utils.Util import StrUtil
-from ...allitems.jobitems import AllJobs
+from ..baseSpider import baseSpider
 import logging.config
 logger = logging.getLogger('ahu')
 
-class UNUjobSpider(scrapy.Spider):
+class UNUjobSpider(baseSpider):
     name = "UNUjob"
 
     start_urls = ["https://unu.edu/admissions/doctoral",
                   "https://unu.edu/admissions/masters",
                   "https://unu.edu/admissions/non-degree"]
 
-    def __init__(self):
+    def __init__(self,*a, **kw):
+        super(UNUjobSpider, self).__init__(*a, **kw)
         logger.debug("开始爬取UNU招聘信息")
 
     def parse(self, response):
@@ -38,7 +39,14 @@ class UNUjobSpider(scrapy.Spider):
 
     def _parseUNUjob(self, response):
         selector = scrapy.Selector(response)
-        item = self._inititem()
+        item = self.initItem()
+        item['englishname'] = 'UNU'
+        item['chinesename'] = '联合国大学'
+        item['incountry'] = '日本'
+        item['incontinent'] = '亚洲'
+        item['type'] = '科学研究'
+        item['url'] = 'unu.edu'
+        item['alljoburl'] = 'https://unu.edu/admissions'
         item['joburl'] = response.url
         describe = selector.xpath('//li[@id="overview_tab"]/div/p/text()').extract()
         if describe:
@@ -88,38 +96,4 @@ class UNUjobSpider(scrapy.Spider):
             logger.debug('>>UNU>>job>>location>>%s' % item["Location"])
         else:
             logger.error('爬取开设国家失败，网页结构可能改变，建议检查')
-        print item
-        yield item
-
-    def _inititem(self):
-        item = AllJobs()
-        item['englishname'] = 'UNU'
-        item['chinesename'] = '联合国大学'
-        item['incountry'] = '日本'
-        item['incontinent'] = '亚洲'
-        item['type'] = '科学研究'
-        item['url'] = 'unu.edu'
-        item['alljoburl'] = 'https://unu.edu/admissions'
-        item['description'] = ''
-        item['joburl'] = ''
-        item['work'] = ''
-        item['reference'] = ''
-        item['issuedate'] = ''
-        item['ApplicationDeadline'] = ''
-        item['responsibilities'] = ''
-        item['skill'] = ''
-        item['PostLevel'] = ''
-        item['belong'] = ''
-        item['TypeofContract'] = ''
-        item['language'] = ''
-        item['contracttime'] = ''
-        item['ExpectedDurationofAssignment'] = ''
-        item['linkman'] = ''
-        item['Location'] = ''
-        item['full_time'] = ''
-        item['treatment'] = ''
-        item['education'] = ''
-        item['addition'] = ''
-        item['experience'] = ''
-        logger.info('初始化job item成功')
-        return item
+        self.insert(item,spiderName=self.name)

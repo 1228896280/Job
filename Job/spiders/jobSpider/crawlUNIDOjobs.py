@@ -7,17 +7,18 @@ import scrapy
 import logging.config
 from scrapy.http import Request
 from ...utils.Util import StrUtil
-from ...allitems.jobitems import AllJobs
+from ..baseSpider import baseSpider
 logger = logging.getLogger("ahu")
 
-class UNIDOjobLink(scrapy.Spider):
+class UNIDOjobLink(baseSpider):
     name = "UNIDOjob"
     start_urls = ["http://www.unido.org/employment/consultancy-opportunities.html",
                   "http://www.unido.org/employment/o518900.html",
                   "http://www.unido.org/overview/employment/internship.html",
                   "http://www.unido.org/internship/internships-in-field-offices.html"]
 
-    def __init__(self):
+    def __init__(self,*a, **kw):
+        super(UNIDOjobLink, self).__init__(*a, **kw)
         self.preurl = 'http://www.unido.org'
 
     def parse(self, response):
@@ -58,6 +59,13 @@ class UNIDOjobLink(scrapy.Spider):
             return
 
         item = self._inititem()
+        item['englishname'] = 'UNIDO'  # 组织英文缩写
+        item['chinesename'] = '联合国工业发展组'  # 组织中文缩写
+        item['incontinent'] = '欧洲'  # 组织所属洲
+        item['incountry'] = '奥地利'  # 组织所在国家
+        item['type'] = '经济'  # 组织类别
+        item['url'] = 'www.unido.org'  # 组织主页
+        item['alljoburl'] = 'http://www.unido.org/employment.html'
         url = response.url
         item['joburl'] = url
         num = 0
@@ -122,12 +130,11 @@ class UNIDOjobLink(scrapy.Spider):
         itemname= 'addition'
         item[itemname] = StrUtil.delWhiteSpace(tips)
         logger.debug("UNIDO-->job-->%s" % url + '-->' + itemname + '-->' + item[itemname])
-        print item
-        yield item
+        self.insert(item, spiderName=self.name)
 
     def duepdf(self, response):
         url = response.url
-        items = self._inititem()
+        items = self.initItem()
         items['joburl'] = url
         if url.endswith('.pdf'):
             PDF_name = url.split('/')[-1]
@@ -136,47 +143,11 @@ class UNIDOjobLink(scrapy.Spider):
             yield Request(url, meta={'items': items}, callback=self.savepdf, dont_filter=True)
         else:
             items['addition'] = StrUtil.delWhiteSpace(url)
-        yield items
+        self.insert(items,spiderName=self.name)
 
     def savepdf(self, response):
         items = response.meta['items']
         with open('./UNIDOPDF/' + items['work'], 'wb') as f:
             f.write(response.body)
-
-    def _inititem(self):
-        '''
-        初始化全部字段
-        :return: 初始字段
-        '''
-        item = AllJobs()
-        item['englishname'] = 'UNIDO'  # 组织英文缩写
-        item['chinesename'] = '联合国工业发展组'  # 组织中文缩写
-        item['incontinent'] = '欧洲'  # 组织所属洲
-        item['incountry'] = '奥地利'  # 组织所在国家
-        item['type'] = '经济'  # 组织类别
-        item['url'] = 'www.unido.org'  # 组织主页
-        item['alljoburl'] = 'http://www.unido.org/employment.html'
-        item['description'] = ''
-        item['joburl'] = ''
-        item['work'] = ''
-        item['reference'] = ''
-        item['issuedate'] = ''
-        item['ApplicationDeadline'] = ''
-        item['responsibilities'] = ''
-        item['skill'] = ''
-        item['PostLevel'] = ''
-        item['belong'] = ''
-        item['TypeofContract'] = ''
-        item['language'] = ''
-        item['contracttime'] = ''
-        item['ExpectedDurationofAssignment'] = ''
-        item['linkman'] = ''
-        item['Location'] = ''
-        item['full_time'] = ''
-        item['treatment'] = ''
-        item['education'] = ''
-        item['addition'] = ''
-        item['experience'] = ''
-        return item
 
 

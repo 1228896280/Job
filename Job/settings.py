@@ -22,7 +22,7 @@ MYSQLDB_CONNECT = {
     'use_unicode': False,
 }
 
-SPLASH_URL = 'http://192.168.99.100:8050'
+SPLASH_URL = 'http://127.0.0.1:8050'
 
 LOGPATH = 'c:\\log'
 

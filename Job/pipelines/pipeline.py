@@ -3,17 +3,16 @@
 '''
     scrapy数据存储，接受爬取传递的item并持久化入mysql
 '''
-from twisted.enterprise import adbapi
-from mysqlDB import myaqlSave
-from ..allitems.jobitems import AllJobs
-from ..allitems.leaderitems import AllLeaders
 import logging.config
+
 import pymysql
-from .. import settings
+from Job import settings
+from mysqlDB import myaqlSave
+
 logger = logging.getLogger('ahu')
 
 class JobPipeline(object):
-    # TODO 初始化Mysql
+
     def __init__(self):
         self.myaqlsave = myaqlSave()
         self.conn = pymysql.connect(**settings.MYSQLDB_CONNECT)
@@ -26,16 +25,10 @@ class JobPipeline(object):
             self.init()
 
     def init(self):
-        # 创建商品抓取记录表
-        jobCommand = ('DROP TABLE IF EXISTS `alljob`;'
-                    'CREATE TABLE `alljob` ('
+        jobCommand = ('DROP TABLE IF EXISTS `岗位`;'
+                    'CREATE TABLE `岗位` ('
                       '`英文缩写` varchar(20) DEFAULT NULL,'
                       '`中文名称` varchar(80) DEFAULT NULL,'
-                      '`所属洲` varchar(40) DEFAULT NULL,'
-                      '`所在地` varchar(100) DEFAULT NULL,'
-                      '`分类` varchar(40) DEFAULT NULL,'
-                      '`主页url` varchar(80) DEFAULT NULL,'
-                      '`招聘网址` varchar(80) DEFAULT NULL,'
                       '`岗位url` varchar(150) NOT NULL,'
                       '`岗位名称` varchar(300) NOT NULL,'
                       '`工作地点` varchar(300) DEFAULT NULL,'
@@ -46,19 +39,27 @@ class JobPipeline(object):
                       '`职能` text,'
                       '`技能` text,'
                       '`组织机构` text,'
-                      '`包工方式` text,'
                       '`语言` text,'
                       '`初始合同时间` text,'
-                      '`预计工作时间` varchar(200) DEFAULT NULL,'
-                      '`联系人` text,'
                       '`是否全职` varchar(50) DEFAULT NULL,'
                       '`待遇` text,'
                       '`教育背景` text,'
                       '`附加的` text,'
                       '`工作经历` text,'
-                      '`参考` text,'
                       'PRIMARY KEY (`岗位名称`(100),`岗位url`(100))'
                     ') ENGINE=InnoDB DEFAULT CHARSET=utf8;')
+
+        orgCommand = ('DROP TABLE IF EXISTS `组织`;'
+                        'CREATE TABLE `组织` ('
+                          '`英文缩写` varchar(20) NOT NULL DEFAULT "",'
+                          '`中文名称` varchar(80) DEFAULT "",'
+                          '`所属洲` varchar(40) DEFAULT "",'
+                          '`所在地` varchar(100) DEFAULT "",'
+                          '`分类` varchar(40) DEFAULT "",'
+                          '`主页url` varchar(80) DEFAULT "",'
+                          '`招聘网址url` varchar(100) DEFAULT "",'
+                          'PRIMARY KEY (`英文缩写`)'
+                        ') ENGINE=InnoDB DEFAULT CHARSET=utf8;')
 
         leaderCommand = ('DROP TABLE IF EXISTS `allleader`;'
                             'CREATE TABLE `allleader` ('
@@ -71,8 +72,7 @@ class JobPipeline(object):
                               'PRIMARY KEY (`姓名`,`链接`)'
                             ') ENGINE=InnoDB DEFAULT CHARSET=utf8;')
 
-        self.create_table(jobCommand)
-        self.create_table(leaderCommand)
+        self.create_table(jobCommand,orgCommand,leaderCommand)
 
     def create_database(self, database_name):
         try:
@@ -81,15 +81,18 @@ class JobPipeline(object):
         except Exception, e:
             logger.warning('创建数据库异常:%s' % str(e))
 
-    def create_table(self, command):
-        try:
-            self.cursor.execute(command)
-            self.conn.commit()
-        except Exception, e:
-            logger.warning('创建表异常:%s' % str(e))
+    def create_table(self, *args):
+        for _ in args:
+            try:
+                self.cursor.execute(_)
+                self.conn.commit()
+            except Exception, e:
+                logger.warning('创建表异常:%s' % str(e))
 
-    def process_item(self, item, spider):
-        if isinstance(item, AllLeaders):
-            self.myaqlsave.insertleaders(self.cursor,self.conn,item)
-        if isinstance(item, AllJobs):
-            self.myaqlsave.insertjobs(self.cursor,self.conn,item)
+    def process_item(self,item,spiderName):
+        if 'job' in spiderName:
+
+            self.myaqlsave.insertjobs(self.cursor, self.conn, item)
+            self.myaqlsave.insertorg(self.cursor, self.conn, item)
+        else:
+            self.myaqlsave.insertleaders(self.cursor, self.conn, item)

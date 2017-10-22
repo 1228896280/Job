@@ -6,13 +6,15 @@ import scrapy
 import json
 import requests
 from scrapy_splash import SplashRequest
-from ...allitems.jobitems import AllJobs
+from ..baseSpider import baseSpider
 import logging.config
 logger = logging.getLogger('ahu')
 
-class WHOjobSpider(scrapy.Spider):
+class WHOjobSpider(baseSpider):
     name = "WHOjob"
-    def __init__(self):
+
+    def __init__(self,*a, **kw):
+        super(WHOjobSpider, self).__init__(*a, **kw)
         logger.debug("开始爬取WHO岗位信息")
         self.preurl = "https://tl-ex.vcdp.who.int/careersection/ex/jobdetail.ftl?job="
 
@@ -84,7 +86,19 @@ class WHOjobSpider(scrapy.Spider):
         '''
         页面提取器，解析字段
         '''
-        item = self.setitem(response)
+        item = self.initItem()
+        item["englishname"] = "WHO"
+        item["chinesename"] = "世界卫生组织"
+        item["incontinent"] = "欧洲"
+        item["incountry"] = "瑞士"
+        item["type"] = "卫生"
+        item["url"] = "http://www.who.int/en/"
+        item["alljoburl"] = "https://tl-ex.vcdp.who.int/careersection/ex/jobsearch.ftl#"
+        item["joburl"] = response.url
+        item["work"] = response.meta["work"]
+        item["Location"] = response.meta["Location"]
+        item["PostLevel"] = response.meta["PostLevel"]
+        item['ApplicationDeadline'] = response.meta["ClosingDate"]
         selector = scrapy.Selector(response)
 
         # 爬取合同期限
@@ -143,7 +157,7 @@ class WHOjobSpider(scrapy.Spider):
             info3 = info2[-1].split('Education:')
         elif 'Education Qualifications' in info2[-1]:
             info3 = info2[-1].split('Education Qualifications')
-            item['skll'] = info3[0]
+            item['skill'] = info3[0]
         else:
             info3 = info2
 
@@ -189,40 +203,5 @@ class WHOjobSpider(scrapy.Spider):
             info8 = info7[-1].split('ADDITIONAL INFORMATION')
             item['treatment'] = info8[0]
             item['addition'] = info8[-1]
-        yield item
-
-    def setitem(self,response):
-        '''
-        初始化WHO的item
-        '''
-        item = AllJobs()
-        item["englishname"] = "WHO"
-        item["chinesename"] = "世界卫生组织"
-        item["incontinent"] = "欧洲"
-        item["incountry"] = "瑞士"
-        item["type"] = "卫生"
-        item["url"] = "http://www.who.int/en/"
-        item["alljoburl"] = "https://tl-ex.vcdp.who.int/careersection/ex/jobsearch.ftl#"
-        item["joburl"] = response.url
-        item["work"] = response.meta["work"]
-        item["Location"] = response.meta["Location"]
-        item["PostLevel"] = response.meta["PostLevel"]
-        item['ApplicationDeadline'] = response.meta["ClosingDate"]
-        item['description'] = ''
-        item['reference'] = ''
-        item['issuedate'] = ''
-        item['responsibilities'] = ''
-        item['skill'] = ''
-        item['belong'] = ''
-        item['TypeofContract'] = ''
-        item['language'] = ''
-        item['contracttime'] = ''
-        item['ExpectedDurationofAssignment'] = ''
-        item['linkman'] = ''
-        item['full_time'] = ''
-        item['treatment'] = ''
-        item['education'] = ''
-        item['addition'] = ''
-        item['experience'] = ''
-        return item
-
+        # self.debugItem(item)
+        self.insert(item,spiderName=self.name)

@@ -3,10 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="64a097ce-0b36-4c47-bda7-52ba56d9bfd7" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/allitems/jobitems.py" afterPath="$PROJECT_DIR$/Job/allitems/jobitems.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/pipelines/mysqlDB.py" afterPath="$PROJECT_DIR$/Job/pipelines/mysqlDB.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/pipelines/pipeline.py" afterPath="$PROJECT_DIR$/Job/pipelines/pipeline.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/settings.py" afterPath="$PROJECT_DIR$/Job/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlCERNjobs.py" afterPath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlCERNjobs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlITERjobs.py" afterPath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlITERjobs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlMOHRSSjobs.py" afterPath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlMOHRSSjobs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlOECDjobs.py" afterPath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlOECDjobs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNDPjobs.py" afterPath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNDPjobs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNIDOjobs.py" afterPath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNIDOjobs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNUjobs.py" afterPath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNUjobs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlWHOjobs.py" afterPath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlWHOjobs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlWIPOjobs.py" afterPath="$PROJECT_DIR$/Job/spiders/jobSpider/crawlWIPOjobs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Job/utils/Util.py" afterPath="$PROJECT_DIR$/Job/utils/Util.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Job/utils/logging.ini" afterPath="$PROJECT_DIR$/Job/logging.ini" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,109 +30,24 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Job$1.coverage" NAME="1 Coverage Results" MODIFIED="1508416537693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Job/middlewares" />
     <SUITE FILE_PATH="coverage/Job$autoproxy.coverage" NAME="autoproxy Coverage Results" MODIFIED="1508411051399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Job/middlewares" />
-    <SUITE FILE_PATH="coverage/Job$main.coverage" NAME="main Coverage Results" MODIFIED="1508495362233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Job$main.coverage" NAME="main Coverage Results" MODIFIED="1508679585816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Job$proxyMiddleware.coverage" NAME="proxyMiddleware Coverage Results" MODIFIED="1508423018857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Job/middlewares" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="pipeline.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Job/pipelines/pipeline.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-              <folding>
-                <element signature="e#70#107#0" expanded="true" />
-                <marker date="1508495362073" expanded="true" signature="786:815" ph="DROP TABLE I... " />
-                <marker date="1508495362073" expanded="true" signature="839:862" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:919" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:976" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1032" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1089" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1144" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1202" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1259" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1314" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1368" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1426" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1481" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1539" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1597" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1634" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1669" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1704" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1741" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1778" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1813" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1852" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1912" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:1948" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:2005" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:2040" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:2077" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:2113" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:2150" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:2185" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:2248" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="839:2307" ph="CREATE TABLE... alljob" />
-                <marker date="1508495362073" expanded="true" signature="2309:2310" ph="CREATE TABLE... IF" />
-                <marker date="1508495362073" expanded="true" signature="2338:2370" ph="DROP TABLE I... " />
-                <marker date="1508495362073" expanded="true" signature="2372:2920" ph="CREATE TABLE... allleader" />
-                <marker date="1508495362073" expanded="true" signature="2402:2428" ph="CREATE TABLE... allleader" />
-                <marker date="1508495362073" expanded="true" signature="2402:2498" ph="CREATE TABLE... allleader" />
-                <marker date="1508495362073" expanded="true" signature="2402:2560" ph="CREATE TABLE... allleader" />
-                <marker date="1508495362073" expanded="true" signature="2402:2627" ph="CREATE TABLE... allleader" />
-                <marker date="1508495362073" expanded="true" signature="2402:2631" ph="CREATE TABLE... allleader" />
-                <marker date="1508495362073" expanded="true" signature="2402:2688" ph="CREATE TABLE... allleader" />
-                <marker date="1508495362073" expanded="true" signature="2402:2692" ph="CREATE TABLE... allleader" />
-                <marker date="1508495362073" expanded="true" signature="2402:2735" ph="CREATE TABLE... allleader" />
-                <marker date="1508495362073" expanded="true" signature="2402:2797" ph="CREATE TABLE... allleader" />
-                <marker date="1508495362073" expanded="true" signature="2402:2853" ph="CREATE TABLE... allleader" />
-                <marker date="1508495362073" expanded="true" signature="2402:2920" ph="CREATE TABLE... allleader" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mysqlDB.py" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="mysqlDB.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Job/pipelines/mysqlDB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+            <state relative-caret-position="-74">
+              <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
               <folding>
-                <marker date="1508495361989" expanded="true" signature="254:319" ph="insert into allleader... " />
-                <marker date="1508495361989" expanded="true" signature="707:854" ph="insert into alljob... " />
+                <marker date="1508679659231" expanded="true" signature="254:319" ph="insert into allleader... " />
+                <marker date="1508679659231" expanded="true" signature="650:651" ph="insert into gang... " />
+                <marker date="1508679659231" expanded="true" signature="650:741" ph="insert into alljob... " />
+                <marker date="1508679659231" expanded="true" signature="1552:1564" ph="insert into zu... " />
+                <marker date="1508679659231" expanded="true" signature="1552:1630" ph="insert into allleader... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1104">
-              <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Job/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -149,25 +76,32 @@
         <option value="$PROJECT_DIR$/Job/middlewares/getProxy.py" />
         <option value="$PROJECT_DIR$/Job/middlewares/testProxy.py" />
         <option value="$PROJECT_DIR$/Job/middlewares/proxyMiddleware.py" />
-        <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/Job/allitems/jobitems.py" />
         <option value="$PROJECT_DIR$/Job/allitems/leaderitems.py" />
         <option value="$PROJECT_DIR$/Job/middlewares/phantomjsMiddleware.py" />
-        <option value="$PROJECT_DIR$/Job/utils/Util.py" />
-        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlCERNjobs.py" />
         <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlESCIjobs.py" />
-        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlOECDjobs.py" />
-        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNDPjobs.py" />
-        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNIDOjobs.py" />
-        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNUjobs.py" />
-        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlWHOjobs.py" />
-        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlWIPOjobs.py" />
         <option value="$PROJECT_DIR$/Job/spiders/leaderSpider/crawlOECDleaders.py" />
         <option value="$PROJECT_DIR$/Job/spiders/leaderSpider/crawlWIPOleaders.py" />
-        <option value="$PROJECT_DIR$/Job/settings.py" />
-        <option value="$PROJECT_DIR$/Job/pipelines/mysqlDB.py" />
-        <option value="$PROJECT_DIR$/Job/pipelines/pipeline.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/baseSpider.py" />
+        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlMOHRSSjobs.py" />
+        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlCERNjobs.py" />
+        <option value="$PROJECT_DIR$/Job/settings.py" />
+        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlITERjobs.py" />
+        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNDPjobs.py" />
+        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlWIPOjobs.py" />
+        <option value="$PROJECT_DIR$/Job/spiders/baseSpider.py" />
+        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlWHOjobs.py" />
+        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlOECDjobs.py" />
+        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNIDOjobs.py" />
+        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNUjobs.py" />
+        <option value="$PROJECT_DIR$/Job/pipelines/pipeline.py" />
+        <option value="$PROJECT_DIR$/scrapy.cfg" />
+        <option value="$PROJECT_DIR$/Job/utils/Util.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/Job/allitems/jobitems.py" />
+        <option value="$PROJECT_DIR$/1.html" />
+        <option value="$PROJECT_DIR$/Job/spiders/jobSpider/crawlESCAPjobs.py" />
+        <option value="$PROJECT_DIR$/Job/pipelines/mysqlDB.py" />
       </list>
     </option>
   </component>
@@ -183,7 +117,9 @@
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="添加" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -199,7 +135,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -240,7 +175,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="spiders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="pipelines" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Job" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="middlewares" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -265,12 +236,20 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../jd_analysis" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\workspace_python\spider\scrapy_spider\Job\Job" />
+      <recent name="E:\workspace_python\spider\scrapy_spider\Job" />
+      <recent name="E:\workspace_python\spider\scrapy_spider\Job\Job\spiders" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -554,21 +533,31 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26502147" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30464327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27628756" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -588,10 +577,19 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -619,13 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="606" column="0" lean-forward="false" selection-start-line="606" selection-start-column="0" selection-end-line="606" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/utils/logging.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -658,41 +649,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Job/middlewares/1.py" />
-    <entry file="file://$PROJECT_DIR$/../autoproxy/huaban/autoproxy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1221">
-          <caret line="172" column="8" lean-forward="false" selection-start-line="172" selection-start-column="8" selection-end-line="172" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../autoproxy/autoproxy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="177" column="4" lean-forward="false" selection-start-line="177" selection-start-column="4" selection-end-line="182" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/middlewares/getProxy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="86" column="114" lean-forward="true" selection-start-line="86" selection-start-column="114" selection-end-line="86" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/middlewares/testProxy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/middlewares/proxyMiddleware.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="206" column="20" lean-forward="true" selection-start-line="206" selection-start-column="20" selection-end-line="206" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../autoproxy/huaban/autoproxy.py" />
+    <entry file="file://$PROJECT_DIR$/../autoproxy/autoproxy.py" />
     <entry file="file://$PROJECT_DIR$/Job/allitems/leaderitems.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -707,80 +665,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Job/utils/Util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-426">
-          <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlCERNjobs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlESCIjobs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlMOHRSSjobs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1216">
-          <caret line="56" column="60" lean-forward="true" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlITERjobs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlOECDjobs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2440">
-          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNDPjobs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-802">
-          <caret line="221" column="23" lean-forward="true" selection-start-line="221" selection-start-column="23" selection-end-line="221" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNIDOjobs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="178" column="31" lean-forward="false" selection-start-line="178" selection-start-column="31" selection-end-line="178" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNUjobs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1980">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlWHOjobs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3841">
-          <caret line="167" column="26" lean-forward="false" selection-start-line="167" selection-start-column="26" selection-end-line="167" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlWIPOjobs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2642">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -798,14 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Job/allitems/jobitems.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../venv/venvpython2.7/Lib/site-packages/scrapydo/api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -814,10 +694,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="943">
+          <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../venv/venvpython2.7/Lib/site-packages/scrapy/spiders/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -826,90 +713,290 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlMOHRSSjobs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="57" column="8" lean-forward="false" selection-start-line="57" selection-start-column="8" selection-end-line="62" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlWIPOjobs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="100" column="28" lean-forward="true" selection-start-line="100" selection-start-column="28" selection-end-line="100" selection-end-column="28" />
+          <folding>
+            <element signature="e#25#46#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlWHOjobs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../venv/venvpython2.7/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="488" column="8" lean-forward="false" selection-start-line="488" selection-start-column="8" selection-end-line="488" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlOECDjobs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-265">
+          <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNIDOjobs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1633">
+          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/pipelines/pipeline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+          <folding>
+            <marker date="1508669862316" expanded="true" signature="626:651" ph="DROP TABLE I... " />
+            <marker date="1508669862316" expanded="true" signature="675:694" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:751" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:808" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:809" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:863" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:917" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:975" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1030" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1088" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1146" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1183" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1218" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1253" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1290" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1291" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1325" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1364" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1365" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1421" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1456" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1493" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1529" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1566" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1567" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1629" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="675:1688" ph="CREATE TABLE... alljob" />
+            <marker date="1508669862316" expanded="true" signature="1690:1691" ph="CREATE TABLE... IF" />
+            <marker date="1508669862316" expanded="true" signature="1716:1741" ph="DROP TABLE I... " />
+            <marker date="1508669862316" expanded="true" signature="1769:1788" ph="CREATE TABLE... 组织" />
+            <marker date="1508669862316" expanded="true" signature="1769:1856" ph="CREATE TABLE... 组织" />
+            <marker date="1508669862316" expanded="true" signature="1769:1915" ph="CREATE TABLE... 组织" />
+            <marker date="1508669862316" expanded="true" signature="1769:1969" ph="CREATE TABLE... 组织" />
+            <marker date="1508669862316" expanded="true" signature="1769:1973" ph="CREATE TABLE... 组织" />
+            <marker date="1508669862316" expanded="true" signature="1769:2032" ph="CREATE TABLE... 组织" />
+            <marker date="1508669862316" expanded="true" signature="1769:2089" ph="CREATE TABLE... 组织" />
+            <marker date="1508669862316" expanded="true" signature="1769:2145" ph="CREATE TABLE... 组织" />
+            <marker date="1508669862316" expanded="true" signature="1769:2149" ph="CREATE TABLE... 组织" />
+            <marker date="1508669862316" expanded="true" signature="1769:2212" ph="CREATE TABLE... 组织" />
+            <marker date="1508669862316" expanded="true" signature="1769:2261" ph="CREATE TABLE... 组织" />
+            <marker date="1508669862316" expanded="true" signature="1769:2324" ph="CREATE TABLE... 组织" />
+            <marker date="1508669862316" expanded="true" signature="2355:2387" ph="DROP TABLE I... " />
+            <marker date="1508669862316" expanded="true" signature="2389:2937" ph="CREATE TABLE... allleader" />
+            <marker date="1508669862316" expanded="true" signature="2419:2445" ph="CREATE TABLE... allleader" />
+            <marker date="1508669862316" expanded="true" signature="2419:2515" ph="CREATE TABLE... allleader" />
+            <marker date="1508669862316" expanded="true" signature="2419:2577" ph="CREATE TABLE... allleader" />
+            <marker date="1508669862316" expanded="true" signature="2419:2644" ph="CREATE TABLE... allleader" />
+            <marker date="1508669862316" expanded="true" signature="2419:2648" ph="CREATE TABLE... allleader" />
+            <marker date="1508669862316" expanded="true" signature="2419:2705" ph="CREATE TABLE... allleader" />
+            <marker date="1508669862316" expanded="true" signature="2419:2709" ph="CREATE TABLE... allleader" />
+            <marker date="1508669862316" expanded="true" signature="2419:2752" ph="CREATE TABLE... allleader" />
+            <marker date="1508669862316" expanded="true" signature="2419:2814" ph="CREATE TABLE... allleader" />
+            <marker date="1508669862316" expanded="true" signature="2419:2870" ph="CREATE TABLE... allleader" />
+            <marker date="1508669862316" expanded="true" signature="2419:2937" ph="CREATE TABLE... allleader" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlITERjobs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="772">
+          <caret line="86" column="37" lean-forward="false" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/logging.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ghostdriver.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlCERNjobs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1587">
+          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNUjobs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/middlewares/getProxy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1909">
+          <caret line="86" column="114" lean-forward="true" selection-start-line="86" selection-start-column="114" selection-end-line="86" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/middlewares/testProxy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/middlewares/proxyMiddleware.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5382">
+          <caret line="241" column="20" lean-forward="true" selection-start-line="241" selection-start-column="20" selection-end-line="241" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../venv/venvpython2.7/Lib/site-packages/scrapy_splash/request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrapy.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Job/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        <state relative-caret-position="115">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Job/pipelines/pipeline.py">
+    <entry file="file://$PROJECT_DIR$/1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        <state relative-caret-position="23">
+          <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../venv/venvpython2.7/Lib/site-packages/scrapy/selector/unified.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="68" column="8" lean-forward="false" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/utils/Util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="56" column="35" lean-forward="false" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/spiders/baseSpider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlESCAPjobs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2024">
+          <caret line="88" column="24" lean-forward="true" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
           <folding>
-            <element signature="e#70#107#0" expanded="true" />
-            <marker date="1508495362073" expanded="true" signature="786:815" ph="DROP TABLE I... " />
-            <marker date="1508495362073" expanded="true" signature="839:862" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:919" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:976" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1032" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1089" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1144" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1202" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1259" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1314" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1368" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1426" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1481" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1539" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1597" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1634" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1669" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1704" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1741" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1778" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1813" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1852" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1912" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:1948" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:2005" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:2040" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:2077" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:2113" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:2150" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:2185" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:2248" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="839:2307" ph="CREATE TABLE... alljob" />
-            <marker date="1508495362073" expanded="true" signature="2309:2310" ph="CREATE TABLE... IF" />
-            <marker date="1508495362073" expanded="true" signature="2338:2370" ph="DROP TABLE I... " />
-            <marker date="1508495362073" expanded="true" signature="2372:2920" ph="CREATE TABLE... allleader" />
-            <marker date="1508495362073" expanded="true" signature="2402:2428" ph="CREATE TABLE... allleader" />
-            <marker date="1508495362073" expanded="true" signature="2402:2498" ph="CREATE TABLE... allleader" />
-            <marker date="1508495362073" expanded="true" signature="2402:2560" ph="CREATE TABLE... allleader" />
-            <marker date="1508495362073" expanded="true" signature="2402:2627" ph="CREATE TABLE... allleader" />
-            <marker date="1508495362073" expanded="true" signature="2402:2631" ph="CREATE TABLE... allleader" />
-            <marker date="1508495362073" expanded="true" signature="2402:2688" ph="CREATE TABLE... allleader" />
-            <marker date="1508495362073" expanded="true" signature="2402:2692" ph="CREATE TABLE... allleader" />
-            <marker date="1508495362073" expanded="true" signature="2402:2735" ph="CREATE TABLE... allleader" />
-            <marker date="1508495362073" expanded="true" signature="2402:2797" ph="CREATE TABLE... allleader" />
-            <marker date="1508495362073" expanded="true" signature="2402:2853" ph="CREATE TABLE... allleader" />
-            <marker date="1508495362073" expanded="true" signature="2402:2920" ph="CREATE TABLE... allleader" />
+            <element signature="e#55#64#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/spiders/jobSpider/crawlUNDPjobs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="74" column="35" lean-forward="true" selection-start-line="74" selection-start-column="35" selection-end-line="74" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Job/allitems/jobitems.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Job/pipelines/mysqlDB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        <state relative-caret-position="-74">
+          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
           <folding>
-            <marker date="1508495361989" expanded="true" signature="254:319" ph="insert into allleader... " />
-            <marker date="1508495361989" expanded="true" signature="707:854" ph="insert into alljob... " />
+            <marker date="1508679659231" expanded="true" signature="254:319" ph="insert into allleader... " />
+            <marker date="1508679659231" expanded="true" signature="650:651" ph="insert into gang... " />
+            <marker date="1508679659231" expanded="true" signature="650:741" ph="insert into alljob... " />
+            <marker date="1508679659231" expanded="true" signature="1552:1564" ph="insert into zu... " />
+            <marker date="1508679659231" expanded="true" signature="1552:1630" ph="insert into allleader... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1104">
-          <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
