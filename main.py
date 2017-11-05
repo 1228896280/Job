@@ -21,6 +21,7 @@ from Job.spiders.jobSpider.crawlUNUjobs import UNUjobSpider
 from Job.spiders.jobSpider.crawlWHOjobs import WHOjobSpider
 from Job.spiders.jobSpider.crawlWIPOjobs import WIPOjobSpider
 from Job.spiders.jobSpider.crawlESCAPjobs import ESCAPjobsSpider
+from Job.spiders.jobSpider.crawlUNESCOjobs import UNESCOjobSpider
 '''
     若日志输出文件路径不存在，创建日志输出文件路径
     默认在c盘log文件夹下
@@ -51,9 +52,10 @@ class StartScrapySpider(object):
                 # WHOjobSpider,
                 # ITERJobSpider,
                 # MOHRSSJobSpider, #唯一国内网站，测试ip效果较好
-                # OECDJobSpider,
+                OECDJobSpider,
                 # WIPOjobSpider,
-                ESCAPjobsSpider
+                # ESCAPjobsSpider
+                # UNESCOjobSpider
             ]
         else:
             spiders = []

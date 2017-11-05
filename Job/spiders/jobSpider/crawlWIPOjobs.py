@@ -35,7 +35,7 @@ class WIPOjobSpider(baseSpider):
             logger.debug("WIPO待爬岗位:  " + "https://wipo.taleo.net" + link)
             url = 'https://wipo.taleo.net' + link
 
-            '''splash渲染，该网站响应较慢，如渲染失败，可适当增姐延迟时间
+            '''splash渲染，该网站响应较慢，如渲染失败，可适当增长延迟时间
               wait->3
             '''
             yield SplashRequest(url=url,
@@ -79,19 +79,19 @@ class WIPOjobSpider(baseSpider):
         requireinfo = response.xpath('//div[@class="editablesection"]/div[7]')
         require = StrUtil.delMoreSpace(StrUtil.delWhiteSpace(re.sub('\n', ' ', requireinfo.xpath('string(.)').extract()[0])))
 
-        item["description"] = re.search(r"Organizational(.*?)Duties and responsibilities",require,re.I).group(0).strip('Duties and responsibilities')  # 组织背景
+        item["description"] = re.search(r"Organizational(.*)Duties and responsibilities",require,re.I).group(0).strip('Duties and responsibilities')  # 组织背景
 
-        item["responsibilities"] = re.search(r"Duties and responsibilities(.*?)Requirements",require,re.I).group(0).strip('Requirements')  # 职能
+        item["responsibilities"] = re.search(r"Duties and responsibilities(.*)Requirements",require,re.I).group(0).strip('Requirements')  # 职能
 
-        Requirements = re.search(r"Requirements(.*?)Organizational competencies",require,re.I).group(0)  # 要求
+        Requirements = re.search(r"Requirements(.*)Organizational competencies",require,re.I).group(0)  # 要求
 
-        item["experience"] = re.search(r'Experience(.*?)Languages',Requirements,re.I).group(0).strip('Languages')
+        item["experience"] = re.search(r'Experience(.*)Languages',Requirements,re.I).group(0).strip('Languages')
 
-        item["education"] =  re.search(r'Education(.*?)Experience Ess',Requirements,re.I).group(0).strip('Experience Ess') #教育背景
+        item["education"] =  re.search(r'Education(.*)Experience Ess',Requirements,re.I).group(0).strip('Experience Ess') #教育背景
 
-        item["language"] = re.search(r'Languages(.*?)Job-related',Requirements,re.I).group(0).strip('Job-related')  #语言
+        item["language"] = re.search(r'Languages(.*)Job-related',Requirements,re.I).group(0).strip('Job-related')  #语言
 
-        item["skill"] = re.search(r"Job-related(.*?)Information",require,re.I).group(0).strip('5. Information')    #技能
+        item["skill"] = re.search(r"Job-related(.*)Information",require,re.I).group(0).strip('5. Information')    #技能
 
         item["addition"] = StrUtil.delMoreSpace(
             StrUtil.delWhiteSpace(require.split('Organizational context')[-1].split

@@ -72,12 +72,12 @@ class MOHRSSJobSpider(baseSpider):
         item["issuedate"] = time.split('-')[0]  # 发布时间
         item["ApplicationDeadline"] = time.split('-')[1] #截止时间
         text = StrUtil.delMoreSpace(StrUtil.delWhiteSpace(selector.xpath('//div[@id="jd_content"]').xpath('string(.)').extract()[0]))
-        item["responsibilities"] = re.search(r'Responsibilities(.*?)Competencies', text).group(0).strip('Competencies')  # 职责
-        item["description"] = re.search(r'Special\s+Notice(.*?)Org\.\s+Setting\s+and\s+Reporting', text).group(0).strip('Org.Setting and Reporting')  # 描述
-        item["skill"] = re.search(r'Competencies(.*?)Education', text).group(0).strip('Education')  # 技能
-        item["education"] = re.search(r'Education(.*?)Work\s+Experience', text).group(0).strip('Work Experience')  # 教育背景
-        item["experience"] = re.search(r'Work\s+Experience(.*?)Languages', text, re.I).group(0).strip('Languages')  # 工作经历
-        item["language"] = re.search(r'language(.*?)Assessment', text, re.I).group(0).strip('Assessment')  # 语言
-        item["addition"] = re.search(r'United\s+Nations\s+Considerations(.*?)No\s+Fee', text, re.I).group(0).strip('No Fee')  # 附加信息
+        item["responsibilities"] = re.search(r'Responsibilities(.*)Competencies', text).group(0).strip('Competencies')  # 职责
+        item["description"] = re.search(r'Special\s+Notice(.*)Org\.\s+Setting\s+and\s+Reporting', text).group(0).strip('Org.Setting and Reporting')  # 描述
+        item["skill"] = re.search(r'Competencies(.*)Education', text).group(0).strip('Education')  # 技能
+        item["education"] = 'E' + re.search(r'Education(.*)Work\s+Experience', text).group(0).strip('Work Experience')  # 教育背景
+        item["experience"] = re.search(r'Work\s+Experience(.*)Languages', text).group(0).strip('Languages')  # 工作经历
+        item["language"] = re.search(r'Languages(.*)Assessment', text).group(0).strip('Assessment')  # 语言
+        item["addition"] = re.search(r'United\s+Nations\s+Considerations(.*?)No\s+Fee', text).group(0).strip('No Fee')  # 附加信息
         # self.debugItem(item)
         self.insert(item,self.name)

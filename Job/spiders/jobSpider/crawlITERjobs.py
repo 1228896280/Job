@@ -58,7 +58,7 @@ class ITERJobSpider(baseSpider):
             item['incountry'] = '法国'
             itemDict = self.crawlJobDetailPage(self.driver.page_source)
 
-            # todo 整理字段,倒入新定义的item
+            # todo 整理字段,导入新定义的item
             for each in self.matchingDict.keys():
                 if isinstance(self.matchingDict[each],str):
                     if itemDict.has_key(self.matchingDict.get(each)):

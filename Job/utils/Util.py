@@ -31,7 +31,7 @@ class FileUtil(object):
         """
 		rootFolder = "Job"
 		logPath = self.cur_file_dir().split(rootFolder, 1)[0] + rootFolder + "/Job/logging.ini"
-		print logPath
+		# print logPath
 		return logPath
 
 logging.config.fileConfig(FileUtil().getLogConfigPath())
